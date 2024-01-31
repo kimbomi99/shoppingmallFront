@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
-
+import React from 'react';
+import { Routes, Route } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
+import ListProduct from './components/ListProduct';
+import WriteProduct from './components/WriteProduct';
 function App() {
+  console.warn = function no_console() {};
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<ListProduct/>}/>
+            <Route path='/write' element={<WriteProduct/>}/>
+            <Route path='*' element={<ListProduct/>}/>
+        </Routes>
+      </BrowserRouter>
+    </>
+   
   );
 }
 
