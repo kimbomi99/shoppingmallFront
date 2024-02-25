@@ -4,6 +4,10 @@ import { BrowserRouter } from 'react-router-dom';
 import ListProduct from './components/ListProduct';
 import WriteProduct from './components/WriteProduct';
 import DetailProduct from './components/DetailProduct'; 
+import ListNotice from './components/ListNotice'; 
+import WriteNotice from './components/WriteNotice';
+import DetailNotice from './components/DetailNotice'; 
+
 function App() {
   console.warn = function no_console() {};
   return (
@@ -13,7 +17,9 @@ function App() {
             <Route path='/' element={<ListProduct/>}/>
             <Route path='/write' element={<WriteProduct/>}/>
             <Route path='/detail/:product_code' element={<DetailProduct/>} />
-            
+            <Route path='/notice' element={<ListNotice/>}/>
+            <Route path='/writeNotice' element={<WriteNotice/>}/>
+            <Route path='/detailNotice/:notice_number' element={<DetailNotice/>} />
             <Route path='*' element={<ListProduct/>}/>
         </Routes>
       </BrowserRouter>

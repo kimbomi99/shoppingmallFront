@@ -19,6 +19,10 @@ function ListProduct() {
   return (
     <>
       <h2>상품목록</h2>
+
+      <button onClick={() => navigate('/notice')}>공지사항</button>
+
+
       상품명: <input name='product_name' ref={product_name} />
       <button type='button' onClick={() => {
         getList(`/list?product_name=${product_name.current.value}`)
