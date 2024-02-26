@@ -14,6 +14,12 @@ function WriteProduct() {
       <h2>상품 정보 등록</h2>
       <table>
         <tbody>
+        <tr>
+            <td>상품이미지</td>
+            <td>
+              <input type='file' ref={img} />
+            </td>
+          </tr>
           <tr>
             <td>상품명</td>
             <td><input ref={product_name} /></td>
@@ -24,14 +30,9 @@ function WriteProduct() {
           </tr>
           <tr>
             <td>상품설명</td>
-            <td><textarea rows='5' cols='60' ref={description} /></td>
+            <td><textarea rows='50' cols='100' ref={description} /></td>
           </tr>
-          <tr>
-            <td>상품이미지</td>
-            <td>
-              <input type='file' ref={img} />
-            </td>
-          </tr>
+          
           <tr>
             <td colSpan='2' align='center'>
               <button type='button' onClick={() => {

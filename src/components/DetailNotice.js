@@ -46,9 +46,34 @@ function DetailNotice() {
               <td><textarea rows='5' cols='60' ref={notice} defaultValue={data.notice} /></td>
             </tr>
             <tr>
-            <td>
+              <td colSpan='2' align='center'>
+                <button type='button' onClick={() => {
+                  const form=new FormData();
+                  form.append('notice_number', data.notice_number);
+                  form.append('title', title.current.value);
+                  form.append('notice', notice.current.value);
+      
+                  fetch('/updateNotice', {
+                    method: 'post',
+                    encType: 'text/plain',
+                    body: form}).then(() => {
+                      navigate('/notice');
+                    });
+                  }
+                }>수정</button>
+                &nbsp;
+
+                <button type='button' onClick={() => {
+                  if(window.confirm('삭제할까요?')){
+                    fetch(`/deleteNotice?notice_number=${data.notice_number}`, { method: 'delete' })
+                    .then(() => {navigate('/notice'); });
+                  }
+                }}>삭제</button>
+                &nbsp;
+            
+              
                 <button onClick={() => navigate('/notice')}>목록</button>
-            </td>
+              </td>
             </tr>
           </tbody>
         </table>

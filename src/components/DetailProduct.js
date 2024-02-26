@@ -46,6 +46,14 @@ function DetailProduct() {
       <>
         <table>
           <tbody>
+          <tr>
+              <td>상품이미지</td>
+              <td>
+                <span dangerouslySetInnerHTML={{ __html: image_url }}></span>
+                <br />
+                <input type='file' ref={img} />
+              </td>
+            </tr>
             <tr>
               <td>상품명</td>
               <td><input ref={product_name} defaultValue={data.product_name} /></td>
@@ -56,16 +64,9 @@ function DetailProduct() {
             </tr>
             <tr>
               <td>상품설명</td>
-              <td><textarea rows='5' cols='60' ref={description} defaultValue={data.description} /></td>
+              <td><textarea rows='50' cols='100' ref={description} defaultValue={data.description} /></td>
             </tr>
-            <tr>
-              <td>상품이미지</td>
-              <td>
-                <span dangerouslySetInnerHTML={{ __html: image_url }}></span>
-                <br />
-                <input type='file' ref={img} />
-              </td>
-            </tr>
+            
             <tr>
               <td colSpan='2' align='center'>
                 <button type='button' onClick={() => {
