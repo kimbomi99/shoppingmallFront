@@ -7,6 +7,8 @@ import DetailProduct from './components/DetailProduct';
 import ListNotice from './components/ListNotice'; 
 import WriteNotice from './components/WriteNotice';
 import DetailNotice from './components/DetailNotice'; 
+import ListQuestion from './components/ListQuestion'; 
+
 
 function App() {
   console.warn = function no_console() {};
@@ -20,6 +22,7 @@ function App() {
             <Route path='/notice' element={<ListNotice/>}/>
             <Route path='/writeNotice' element={<WriteNotice/>}/>
             <Route path='/detailNotice/:notice_number' element={<DetailNotice/>} />
+            <Route path='/question' element={<ListQuestion/>}/>
             <Route path='*' element={<ListProduct/>}/>
         </Routes>
       </BrowserRouter>

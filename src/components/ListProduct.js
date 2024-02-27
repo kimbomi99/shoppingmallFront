@@ -21,7 +21,9 @@ function ListProduct() {
       <h2>상품목록</h2>
 
       <button onClick={() => navigate('/notice')}>공지사항</button>
-
+      &nbsp;
+      <button onClick={() => navigate('/question')}>문의하기</button>
+      <br /><br />
 
       상품명: <input name='product_name' ref={product_name} />
       <button type='button' onClick={() => {
